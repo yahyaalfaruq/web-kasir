@@ -1,9 +1,12 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+
 export default function Home() {
-    return (
-      <iframe
-        src="/index.html"
-        style={{ width: "100vw", height: "100vh", border: "none" }}
-      />
-    );
-  }
-  
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/index.html'); // Redirect to the HTML file in the public directory
+  }, [router]);
+
+  return null; // Render nothing while redirecting
+}

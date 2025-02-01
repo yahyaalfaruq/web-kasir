@@ -16,3 +16,11 @@ model Product {
   total Decimal
   createdAt DateTime @default(now())
 }
+
+model Customers {
+  id        Int      @id @default(autoincrement())
+  name      String @unique
+  email     String @unique
+  phone     String @unique
+  createdAt DateTime @default(now())
+}

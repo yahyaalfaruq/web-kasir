@@ -24,7 +24,6 @@ export default async function handler(
               id: true,
               productname: true, // Title dari produk
               price: true,
-              quantity: true,
             },
           },
         },
@@ -39,7 +38,7 @@ export default async function handler(
         id: transaction.product.id,
         title: transaction.product.productname,
         price: transaction.product.price,
-        quantity: transaction.product.quantity,
+        quantity: transaction.productId
       });
     } else if (req.method === "PUT") {
       const transaction = await prisma.transaction.update({

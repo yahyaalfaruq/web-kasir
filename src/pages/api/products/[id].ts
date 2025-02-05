@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { productname, description, price, total } = req.body;
       const product = await prisma.product.update({
         where: { id: Number(id) },
-        data: { productname, description, price, total },
+        data: { productname, description, price },
       });
       return res.status(200).json(product);
     } else if (req.method === 'DELETE') {
